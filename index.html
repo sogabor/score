@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>成绩管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 ">
+    <meta charset="utf-8">
+    <meta name="keywords" content="" text-center>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/easy-responsive-tabs.css" type="text/css" media="all" />
+
+
+</head>
+
+<body text-center>
+    <h1 class="title-agile text-center">成绩管理系统</h1>
+    <div class="w3ls-main">
+        <div class="responsive_tabs w3ls_tab">
+            <div id="horizontalTab">
+                <ul class="resp-tabs-list">
+                    <li>登记成绩</li>
+                    <li>查询成绩</li>
+					<li>光荣榜</li>
+                </ul>
+                <div class="resp-tabs-container">
+                    <!--tab_one-->
+                    <div class="tab1">
+                        <div class="fill_in">
+                            <form  class="creditly-card-form shopf-sear-headinfo_form">
+                                <section class="creditly-wrapper payf_wrapper">
+                                    <div class="credit-card-wrapper">
+                                        <div class="first-row form-group">
+										   
+												<div class="paymntf_card_number_grids">
+													<div class="controls">
+														<label class="control-label"><h3>姓名</h3></label>
+														<input class="billing-address-name form-control" type="text" id="stuname" name="name" placeholder="张小明">
+													</div>
+												</div>
+												
+												 <div class="fpay_card_number_grid_left">
+                                                    <div class="controls">
+                                                        <label class="control-label"><h3>学号</h3></label>
+                                                        <input class="number num form-control" type="text" id="schoolnum"  maxlength="8" placeholder="20180101">
+                                                    </div>
+                                                </div>
+											
+                                                <div class="fpay_card_number_grid_left">
+                                                    <div class="controls">
+                                                        <label class="control-label"><h3>语文</h3></label>
+                                                        <input class="number chinese form-control" inputmode="numeric"  type="number" id="chinese"   placeholder="80" min="0" max="100">
+                                                    </div>
+                                                </div>
+												
+                                                <div class="fpay_card_number_grid_right"><h3>数学</h3>
+                                                    <div class="controls">
+                                                        <label class="control-label"></label>
+                                                        <input class="math form-control" inputmode="numeric" type="number" id="math" name="math" placeholder="80" min="0" max="100">
+                                                    </div>
+                                                </div>
+                                              
+                                            
+												<div class="fpay_card_number_grid_left">
+                                                    <div class="controls">
+                                                        <label class="control-label"><h3>英语</h3></label>
+                                                        <input class="number english form-control" type="number" id="english" name="number" 	inputmode="numeric" autocomplete="cc-number"
+                                                            autocompletetype="cc-number" x-autocompletetype="cc-number" placeholder="80" min="0" max="100">
+                                                    </div>
+                                                </div>
+                                            <div class="button">
+                                                <button class = "submit" id = "save" type="button"> 提交成绩 </button>
+                                            </div>											
+                                    </div>
+                                </section>
+                            </form>
+
+                        </div>
+                    </div>
+                    <!-- //tab one -->
+                    <!-- tab two -->
+                    <div class="tab2">
+					 <div class="fill_in">
+                            <form action="#" method="post" class="creditly-card-form shopf-sear-headinfo_form">
+                                <section class="creditly-wrapper payf_wrapper">
+                                    <div class="credit-card-wrapper">
+                                        <div class="first-row form-group">
+										
+										
+                                            <div class="controls">
+                                                <label class="control-label"><h3>学号</h3></label>
+                                                <input class="billing-address-name form-control" type="text" id="searchnum" name="name" maxlength="8" value="20180101" >
+												<br/>
+												<label class="control-label"><h3>姓名: <span id="searchname">--</span></h3></label><br/>
+												<label class="control-label"><h3>语文: <span id="searchchinese">--</span></h3></label><br/>
+												<label class="control-label"><h3>数学: <span id="searchmath">--</span></h3></label><br/>
+												<label class="control-label"><h3>英语: <span id="searchenglish">--</span></h3></label><br/>
+                                            </div>
+                    
+						
+                            <div class="vertical_post">
+                                <form action="#" method="post">
+                                  	  <div class="button">
+                                         <button class="search" id="search" type="button" >
+                                            <span>搜索 </span>
+                                        </button> 
+                                      </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //tab two -->
+					
+					
+					
+                </div>
+            </div>
+            <div class="tab3">
+           		<div class="fill_in">
+           			<div>
+           				<ul class="listtitle list">
+           					<li><div>名次</div></li>
+           					<li><div>姓名</div></li>
+           					<li><div>总分</div></li>
+           				</ul>
+           				<div class="listitem">
+           					<ul class="list">
+           						<li><div><span id="firstrange">--</span></div></li>
+           						<li><div> <span id="firstname">--</span></div></li>
+           						<li><div><span id="firstscore">--</span></div></li>
+           					</ul>
+           				</div>
+
+           			</div>
+
+           		</div>
+            </div>
+        </div>
+        <!--//tabs-->
+    </div>
+
+	
+	
+	<script src=lib/jquery-3.3.1.min.js></script>
+	<script src=lib/nebPay.js></script>
+	<script src=lib/bootstrap-4.0.0-dist/js/bootstrap.min.js></script>
+	<script src=lib/nebulas.js></script>
+	
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/easy-responsive-tabs.js"></script>
+    <script>
+		"use strict";
+		
+		
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion           
+                width: 'auto', //auto or any width like 600px
+                fit: true, // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                 activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+			
+			
+			
+			 
+			 getrange();
+        });
+		
+		
+		//var dappAddress = "n215tr9F91N8c3V6DvVoB8w3ymApyhxS9Xi"; //测试网环境
+		var dappAddress = "n1uhRb1FC2bBz6VY79hzqB7MGLRSTSaxtN3";//主网环境
+
+		var nebulas = require("nebulas"),
+			Account = nebulas.Account,
+			neb = new nebulas.Neb();
+		//neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));//测试网环境
+		neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));//主网环境
+		
+		 $("#search").click(function(){
+            var searchnum = $("#searchnum").val();
+            if (searchnum) {
+				var from = Account.NewAccount().getAddressString();
+				var value = "0";
+				var nonce = "0";
+				var gas_price = "1000000";
+				var gas_limit = "2000000";
+				
+				var callFunction = "get";
+				var callArgs = "[\""+ searchnum +"\"]";
+				
+				var contract = {
+				  "function":callFunction,
+				  "args":callArgs
+				}
+
+				neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(
+					function(resp){
+					cbSearch(resp);
+				}).catch(function(err){
+					  console.log("error:"+err.message);
+					  $('#searchname').text('--');
+					  $('#searchchinese').text('--');
+					  $('#searchmath').text('--');
+					  $('#searchenglish').text('--');
+					  alert('没有该学生信息');
+				})
+            } else {
+                alert('请输入学号！');
+            }
+        });
+		
+		
+		function cbSearch(resp){
+			var result = resp.result;
+			var tmp = JSON.parse(result);
+			console.log("result:"+result+tmp.key+ "----" + tmp.name);
+
+			if(result === 'null'){
+				alert('没有该学生信息');
+			}else{
+				try{
+				  result = JSON.parse(result);
+
+				  $('#searchname').text(result.name);
+				  $('#searchchinese').text(result.chinese);
+				  $('#searchmath').text(result.math);
+				  $('#searchenglish').text(result.english);
+					
+					
+				}catch(err){
+
+				}
+
+				if (!!result) {
+				  
+				}else{
+					console.log("$$$$$$$$$$$$");
+				}
+			}
+		}
+		
+		
+		
+		var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
+		var nebPay = new NebPay();
+		var serialNumber;
+		
+		$("#save").click(function(){
+			var school_num = $("#schoolnum").val();
+			var school_name = $("#stuname").val();
+			var chinesescore = $("#chinese").val();
+			var mathscore = $("#math").val();
+			var englishscore = $("#english").val();
+			
+			if(!school_num ||school_num ===""){
+				alert('请填入学号');
+			}else if(!school_name ||school_name ===""){
+				alert('请填入姓名');
+			}else if(!chinesescore ||chinesescore ===""
+			|| !mathscore ||mathscore ===""
+			||!englishscore ||englishscore ===""){
+				alert('请填入完整成绩信息');
+			}else{
+				var to = dappAddress;
+				var value = "0";
+				var callFunction = "save";
+				var callArgs = "[\"" + $("#schoolnum").val() + "\",\"" + $("#stuname").val() + "\",\"" + $("#chinese").val() + "\",\"" + $("#math").val() + "\",\"" + $("#english").val() + "\"]";
+
+				serialNumber = nebPay.call(to, value, callFunction, callArgs, {    //使用nebpay的call接口去调用合约,
+				listener: cbPush        //设置listener, 处理交易返回信息
+				});
+				intervalQuery = setInterval(function () {
+				funcIntervalQuery();
+				}, 5000);
+			}
+		});
+		
+
+       
+		
+		var intervalQuery;
+   
+		function funcIntervalQuery(){
+		  nebPay.queryPayInfo(serialNumber)
+			  .then(function(resp){
+				console.log("result:"+resp);
+				var respObject = JSON.parse(resp);
+				if(respObject.code ===0){
+				  alert('成绩提交成功');
+				}
+			  }).catch(function(err){
+				console.log(err);
+			  });
+		}
+		function cbPush(resp){
+		   console.log("response of push:"+JSON.stringify(resp));
+		}
+	
+	
+		function getrange(){
+	
+			var from = Account.NewAccount().getAddressString();
+			var value = "0";
+			var nonce = "0";
+			var gas_price = "1000000";
+			var gas_limit = "2000000";
+			
+			var callFunction = "getfirst";
+			var callArgs = "[\""+ "20180101" +"\"]";
+			
+			var contract = {
+			  "function":callFunction,
+			  "args":callArgs
+			}
+
+			neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(
+				function(resp){
+					var result = resp.result;
+					var tmp = JSON.parse(result);
+					$('#firstrange').text("第一名");
+					$('#firstname').text(tmp.name);
+					var score = parseInt(tmp.chinese) + parseInt(tmp.math) + parseInt(tmp.english);
+					$('#firstscore').text(score);
+				}).catch(function(err){
+					  console.log("error:"+err.message);
+					  $('#mathsc').text('--');
+				})
+		}
+	
+    </script>
+
+	
+    <!-- //credit-card -->
+    <div class="copy-wthree text-center">
+        <p>Copyright &copy NAS  All rights reserved.</p>
+    </div>
+</body>
+<!-- //Body -->
+
+</html>
